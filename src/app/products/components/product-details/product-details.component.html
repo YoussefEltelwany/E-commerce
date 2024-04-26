@@ -1,0 +1,33 @@
+
+
+<div class="box  " style="height: 900px;" *ngIf="!loding">
+
+    <div class="position-relative  me-3">
+        <div class="position-absolute top-0 start-100 translate-middle pb-5 ">
+            <i class="bi bi-x-lg " style="font-size: 2rem; color: rgb(235, 4, 4);" [routerLink]="['/products']" routerLinkActive="router-link-active" ></i>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 col-sm-12">
+            <img src="{{data.image}}" alt="sas">
+        </div>
+        <div class="col-md-7 col-sm-12 pb-5">
+            <div class="info ">
+                <ul class="list-unstyled ">
+                    <li><strong>title :</strong>{{data.title}}</li>
+                    <li><strong>category :</strong>{{data.category}}</li>
+                    <li><strong>description :</strong>{{data.description}}</li>
+                    <li><strong> rate :</strong>{{data.rating.rate}}</li>
+                    <li><strong> count :</strong>{{data.rating.count}}</li>
+                    <li><strong> price :</strong>{{data.price}}$</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- spinerloder -->
+    <div class="w-100 text-center align-content-center pt-5 " *ngIf="loding">
+        <app-spiner ></app-spiner>
+      </div>
+      <!-- endSpinnerloder -->
+</div>

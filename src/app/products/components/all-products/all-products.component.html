@@ -1,0 +1,22 @@
+<div class="mt-5 align-content-center ">
+  
+<div class="my-2 w-25" >
+  <label  class="my-2 ">categories :</label>
+  <select class="form-control" (change)="filterCategorie($event)">
+      <option value="all" selected>all</option>
+      <option value="{{categorie}}" *ngFor="let categorie of categories">{{categorie}}</option>
+  </select>
+
+</div>
+
+  <div class="row align-content-center pe-4" *ngIf="!loding">
+    <div class="col-md-3 col-sm-12  col-lg-3" *ngFor="let item of products"   >
+        <app-product [data]="item" (item)="addtoCart($event)"></app-product>
+    </div>
+  </div>
+  <!-- spinerloder -->
+  <div class="w-100 text-center align-content-center pt-5 " *ngIf="loding">
+    <app-spiner ></app-spiner>
+  </div>
+  <!-- endSpinnerloder -->
+</div>
