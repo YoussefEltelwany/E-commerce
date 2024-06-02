@@ -21,14 +21,12 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     RouterOutlet,
     FormsModule,
-    
    
   ],
   exports:[
     HeaderComponent,
     SpinerComponent,
     FormsModule
-   
   ]
 })
 export class SharedModule { }
